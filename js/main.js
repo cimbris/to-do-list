@@ -121,5 +121,5 @@ textInput.addEventListener('input', function(){
 // const newUser = JSON.parse(localStorage.getItem('test'));
 // console.log(newUser);
 
-const fruits = ['apple', 'melon', 'strawberry']
-console.log(fruits.length);
+// const fruits = ['apple', 'melon', 'strawberry']
+// console.log(fruits.length);
