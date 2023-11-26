@@ -1,7 +1,8 @@
 export default class Model{
     constructor(){
-        this.allNotesMassive = [];
+        this.allNotesMassive = [1,3,4,5,5,632,6];
         this.storageLoader();
+        
     }
 
     storageLoader(){
@@ -10,4 +11,16 @@ export default class Model{
             this.allNotesMassive = JSON.parse(noteHolder);
         }
     }
+
+
+    storageSaver(){
+        localStorage.setItem('notes',JSON.stringify(this.allNotesMassive))
+    }
+
+    addNote(text){
+        this.allNotesMassive.push(text);
+        this.storageSaver();
+        return text;
+    }
+
 }

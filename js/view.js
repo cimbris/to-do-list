@@ -12,6 +12,7 @@ export default class View{
         btn:  document.querySelector('#submitBtn'),
         
     }
+
     noteRender(elemArray){
         const newNote = `
         <li class="list__item">
@@ -28,6 +29,19 @@ export default class View{
         </li>
         `
         this.elementsControl.list.insertAdjacentHTML('afterbegin', newNote)
+        
+    }
+
+    filterNotes(searchValue, list){
+        list.forEach(function(note){
+        let noteLowerCase = note.textContent.toLowerCase()
+        if(noteLowerCase.indexOf(searchValue) !== -1){
+            note.closest('.list__item').style.display = 'flex'
+        }
+        else{
+            note.closest('.list__item').style.display = 'none'
+        }
+    })
     }
 
 }
