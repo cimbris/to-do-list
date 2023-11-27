@@ -5,6 +5,7 @@ export default class Model{
         
     }
 
+    // забирает из локалки notes
     storageLoader(){
         const noteHolder = localStorage.getItem('notes');
         if(noteHolder){
@@ -12,11 +13,12 @@ export default class Model{
         }
     }
 
-
+    // сейв в локалку
     storageSaver(){
         localStorage.setItem('notes',JSON.stringify(this.allNotesMassive))
     }
 
+    // добавляет в массив и в локалку текст из заметки
     addNote(text){
         this.allNotesMassive.push(text);
         this.storageSaver();

@@ -5,14 +5,15 @@ export default class View{
         })
     }
 
+    // переменные
     elementsControl = {
         list: document.querySelector('.list'),
         search: document.querySelector('#search'),
         addNote: document.querySelector('#textInput'),
         btn:  document.querySelector('#submitBtn'),
-        
     }
 
+    // рендерит заметку как элемент массива и засовывает ее в начало списка заметок
     noteRender(elemArray){
         const newNote = `
         <li class="list__item">
@@ -32,6 +33,7 @@ export default class View{
         
     }
 
+    // для каждого элемента списка запускает функцию в которую передается значение инпута для поиска, приводит к нижнему регистру и при совпадении кидает дисплей флекс, наоборот: дисплей нан
     filterNotes(searchValue, list){
         list.forEach(function(note){
         let noteLowerCase = note.textContent.toLowerCase()
@@ -43,5 +45,9 @@ export default class View{
         }
     })
     }
-
+    
+    // очистка инпута
+    clearInput(){
+        this.elementsControl.addNote.value = ''
+    }
 }
