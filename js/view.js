@@ -50,4 +50,9 @@ export default class View{
     clearInput(){
         this.elementsControl.addNote.value = ''
     }
+
+    // красный инпут
+    redAlert(){
+        this.elementsControl.addNote.style.borderColor = 'red'
+    }
 }

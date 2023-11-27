@@ -18,6 +18,8 @@ view.elementsControl.btn.addEventListener('click', function(event){
         const newNote = model.addNote(view.elementsControl.addNote.value);
         view.noteRender(newNote)
         view.clearInput()
+    } else {
+        view.redAlert()
     }
 
 })
