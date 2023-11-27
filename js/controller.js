@@ -14,12 +14,19 @@ view.elementsControl.search.addEventListener('input',(event)=>{
 // рендер заметки при клике на кнопку если значение инпута >0
 view.elementsControl.btn.addEventListener('click', function(event){
     event.preventDefault();
-    if (view.elementsControl.addNote.value.length > 0){
+    if (view.elementsControl.addNote.value.trim().length > 0){
         const newNote = model.addNote(view.elementsControl.addNote.value);
         view.noteRender(newNote)
         view.clearInput()
+
     } else {
         view.redAlert()
     }
+})
 
+// изменение цвета инпута
+view.elementsControl.addNote.addEventListener('input', () => {
+    if (view.elementsControl.addNote.style.borderColor === 'red') {
+        view.transparentBorder();
+    }
 })

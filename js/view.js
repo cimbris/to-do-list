@@ -55,4 +55,9 @@ export default class View{
     redAlert(){
         this.elementsControl.addNote.style.borderColor = 'red'
     }
+
+    // прозрачный инпут
+    transparentBorder(){
+        this.elementsControl.addNote.style.borderColor = 'transparent'
+    }
 }
