@@ -279,7 +279,12 @@ select:-webkit-autofill:focus {
 }
 
 .btn--item {
-  padding: 5px 10px;
+  width: 30px;
+  height: 30px;
+  background-image: url(../../img/icons/trash_bin_icon-icons.com_67981\ 1.svg);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .btn--item:hover {

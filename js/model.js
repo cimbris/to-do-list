@@ -1,6 +1,6 @@
 export default class Model{
     constructor(){
-        this.allNotesMassive = [1,3,4,5,5,632,6];
+        this.allNotesMassive = [];
         this.storageLoader();
         
     }
@@ -25,4 +25,10 @@ export default class Model{
         return text;
     }
 
+    // удаление из массива
+    arrDel(textNote){
+        const index = this.allNotesMassive.indexOf(textNote)
+        this.allNotesMassive.splice(index,1);
+        this.storageSaver()
+    }
 }

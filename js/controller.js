@@ -30,3 +30,11 @@ view.elementsControl.addNote.addEventListener('input', () => {
         view.transparentBorder();
     }
 })
+
+// удаление заметки
+view.elementsControl.list.addEventListener('click', (event) => {
+    if (event.target.classList.contains('trash')){
+        model.arrDel(event.target.previousElementSibling.textContent)
+        view.deleteRend(event.target.closest('.list__item'));
+    }
+})
